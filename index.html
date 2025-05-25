@@ -1,127 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Heying Du - Projects</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>
-    body {
-      font-family: "Times New Roman", serif;
-      background-color: #f9f9fa;
-      margin: 0;
-      padding: 2rem;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background-color: #fff;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 1rem;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      color: #111;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .meta {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      color: #999;
-    }
-
-    .card--highlight {
-      grid-column: span 2;
-    }
-
-    @media (max-width: 768px) {
-      .card--highlight {
-        grid-column: span 1;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heying Du's Projects</title>
+    <style>
+      * {
+        box-sizing: border-box;
       }
-    }
-  </style>
-</head>
-<body>
-  <h1 style="text-align:center; font-size:2rem; margin-bottom:2rem;">Heying Du’s GitHub Projects</h1>
 
-  <div class="container">
-    <div class="card card--highlight">
-      <img src="project-images/kidney.png" alt="Kidney Project" />
-      <div class="card-content">
-        <h3>Deep Bayesian Analysis on Kidney Transplant</h3>
-        <p>A research project focused on applying deep survival models to kidney transplant datasets using Bayesian methods.</p>
-        <div class="meta">2025 · Heying Du</div>
-      </div>
-    </div>
+      body {
+        font-family: 'Times New Roman', serif;
+        background-color: #f3f3f3;
+        margin: 0;
+        padding: 2rem;
+      }
 
-    <div class="card">
-      <img src="project-images/ml-cv.png" alt="Churn Prediction" />
-      <div class="card-content">
-        <h3>Customer Churn Predictor</h3>
-        <p>Built with logistic regression and XGBoost to predict telecom customer churn using behavior data.</p>
-        <div class="meta">2025 · Heying Du</div>
-      </div>
-    </div>
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 0.25rem;
+      }
 
-    <div class="card">
-      <img src="project-images/conversion.png" alt="Conversion Rate" />
-      <div class="card-content">
-        <h3>Purchase Conversion Analytics</h3>
-        <p>Computed per-user conversion rate by analyzing product view vs. purchase patterns.</p>
-        <div class="meta">2025 · Heying Du</div>
-      </div>
-    </div>
+      h2.subtitle {
+        text-align: center;
+        color: #999;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
 
-    <div class="card">
-      <img src="project-images/nlp.png" alt="NLP Text Classification" />
-      <div class="card-content">
-        <h3>Text Classification with Transformers</h3>
-        <p>Used BERT to classify research paper abstracts in biomedical science fields.</p>
-        <div class="meta">2024 · Heying Du</div>
-      </div>
-    </div>
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-    <div class="card">
-      <img src="project-images/dashboard.png" alt="Interactive Dashboard" />
-      <div class="card-content">
-        <h3>Data Dashboard for UCLA</h3>
-        <p>A React + Django-based dashboard that visualizes public health data for institutional reporting.</p>
-        <div class="meta">2025 · Heying Du</div>
+      .card {
+        background-color: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card--highlight {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 1rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-description {
+        flex-grow: 1;
+        font-size: 0.9rem;
+        color: #444;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-footer {
+        font-size: 0.8rem;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Heying Du</h1>
+    <h2 class="subtitle">Xiamen University • UCLA (Incoming) • GitHub Project Highlights</h2>
+
+    <div class="grid">
+      <!-- Highlight card -->
+      <div class="card card--highlight">
+        <img src="project-images/deep-bayesian.png" alt="Deep Bayesian Analysis" />
+        <div class="card-content">
+          <div class="card-title">Deep Bayesian Analysis on Kidney Transplant</div>
+          <div class="card-description">Advanced Bayesian survival models applied to real transplant outcome prediction.</div>
+          <div class="card-footer">2025 • Heying Du</div>
+        </div>
       </div>
+
+      <!-- Other cards -->
+      <div class="card">
+        <img src="project-images/tmle.png" alt="TMLE Project" />
+        <div class="card-content">
+          <div class="card-title">Targeted Maximum Likelihood Estimation</div>
+          <div class="card-description">Causal inference using TMLE with simulations and health datasets.</div>
+          <div class="card-footer">2025 • Heying Du</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="project-images/churn.png" alt="Churn Prediction" />
+        <div class="card-content">
+          <div class="card-title">Churn Prediction for Telecom</div>
+          <div class="card-description">Classification model predicting customer churn from telecom usage logs.</div>
+          <div class="card-footer">2025 • Heying Du</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="project-images/dash-app.png" alt="Dashboard App" />
+        <div class="card-content">
+          <div class="card-title">Interactive Health Dashboard</div>
+          <div class="card-description">A Python Dash app visualizing trends in patient hospitalization.</div>
+          <div class="card-footer">2024 • Heying Du</div>
+        </div>
+      </div>
+
+      <!-- Add more cards here -->
     </div>
-  </div>
-</body>
+  </body>
 </html>
