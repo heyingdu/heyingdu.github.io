@@ -95,7 +95,9 @@ defineProps<{
       height: auto;
       object-fit: contain;
     }
-
+    .card--highlight .card-content {
+        padding-top: 1.5rem;
+    }
     @media (max-width: 1024px) {
       .card--highlight {
         grid-column: span 2;
