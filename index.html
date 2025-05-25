@@ -1,44 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Heying Du | Projects</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-    <style>
-      body {
-        font-family: 'Times New Roman', serif;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heying Du - Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #f9f9fa;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #111;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .meta {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #999;
+    }
+
+    .card--highlight {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 768px) {
+      .card--highlight {
+        grid-column: span 1;
       }
-    </style>
-  </head>
-  <body class="bg-gray-50 min-h-screen px-4 py-8">
-    <header class="text-center mb-10">
-      <h1 class="text-4xl font-bold mb-2">Heying Du</h1>
-      <p class="text-gray-600 text-lg">Showcasing GitHub Projects</p>
-    </header>
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center; font-size:2rem; margin-bottom:2rem;">Heying Du’s GitHub Projects</h1>
 
-    <main class="max-w-4xl mx-auto space-y-6">
-      <!-- Example Project Card -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col sm:flex-row">
-        <img
-          src="./A13BA200-4F22-463C-85B7-F48999C353D1.png"
-          alt="Project Image"
-          class="w-full sm:w-48 h-48 object-cover object-center"
-        />
-        <div class="p-4 flex-1">
-          <h2 class="text-xl font-semibold mb-1">Loggerhead Sea Turtle CT Scan</h2>
-          <p class="text-gray-700 mb-2">
-            A 302-pound loggerhead sea turtle hit by a boat gets an oversize CT scan—with a surprise.
-          </p>
-          <p class="text-sm text-gray-500">28m ago · Cody Jackson & Freida Frisaro</p>
-        </div>
+  <div class="container">
+    <div class="card card--highlight">
+      <img src="project-images/kidney.png" alt="Kidney Project" />
+      <div class="card-content">
+        <h3>Deep Bayesian Analysis on Kidney Transplant</h3>
+        <p>A research project focused on applying deep survival models to kidney transplant datasets using Bayesian methods.</p>
+        <div class="meta">2025 · Heying Du</div>
       </div>
+    </div>
 
-      <!-- More project cards can go here -->
-    </main>
+    <div class="card">
+      <img src="project-images/ml-cv.png" alt="Churn Prediction" />
+      <div class="card-content">
+        <h3>Customer Churn Predictor</h3>
+        <p>Built with logistic regression and XGBoost to predict telecom customer churn using behavior data.</p>
+        <div class="meta">2025 · Heying Du</div>
+      </div>
+    </div>
 
-    <footer class="text-center text-gray-500 text-sm mt-10">
-      &copy; 2025 Heying Du | Built with Vite & Vue 3
-    </footer>
-  </body>
+    <div class="card">
+      <img src="project-images/conversion.png" alt="Conversion Rate" />
+      <div class="card-content">
+        <h3>Purchase Conversion Analytics</h3>
+        <p>Computed per-user conversion rate by analyzing product view vs. purchase patterns.</p>
+        <div class="meta">2025 · Heying Du</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="project-images/nlp.png" alt="NLP Text Classification" />
+      <div class="card-content">
+        <h3>Text Classification with Transformers</h3>
+        <p>Used BERT to classify research paper abstracts in biomedical science fields.</p>
+        <div class="meta">2024 · Heying Du</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="project-images/dashboard.png" alt="Interactive Dashboard" />
+      <div class="card-content">
+        <h3>Data Dashboard for UCLA</h3>
+        <p>A React + Django-based dashboard that visualizes public health data for institutional reporting.</p>
+        <div class="meta">2025 · Heying Du</div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
