@@ -5,45 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Heying Du's personal homepage - data science, statistics, and research interests." />
   <title>Heying Du</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=SF+Pro+Display:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
+    }
+    body {
+      font-family: 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #f4f4f5, #ffffff);
       color: #1a1a1a;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      padding: 2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      padding: 3rem;
+      max-width: 700px;
+      width: 100%;
       text-align: center;
     }
-    .container {
-      padding: 2rem;
-      max-width: 600px;
-    }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: #000;
     }
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+      color: #333;
     }
     .highlight {
-      font-weight: 600;
       color: #007aff;
+      font-weight: 600;
     }
-    .section {
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
       margin-top: 2rem;
+      color: #111;
     }
     .contact {
-      margin-top: 3rem;
+      margin-top: 2rem;
       font-size: 0.95rem;
       color: #555;
     }
@@ -52,21 +65,29 @@
       color: #007aff;
     }
     footer {
-      margin-top: 2rem;
+      margin-top: 3rem;
       font-size: 0.85rem;
       color: #aaa;
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="card">
     <h1>Heying Du</h1>
-    <p>I am Heying, graduated from <span class="highlight">Xiamen University</span>, and earned a Bachelor degree in Economics.</p>
-    <p>I am interested in <span class="highlight">statistical research</span> and currently in a gap year preparing for the <span class="highlight">Master of Data Science</span> at University of California, Los Angeles.</p>
+    <p>I am Heying, graduated from <span class="highlight">Xiamen University</span>, with a Bachelor degree in Economics.</p>
+    <p>I am passionate about <span class="highlight">statistical research</span> and currently in a gap year preparing to study <span class="highlight">Data Science</span> at the University of California, Los Angeles.</p>
     <p>My current interests include <strong>deep survival models</strong> and <strong>targeted maximum likelihood estimation</strong>.</p>
 
     <div class="section">
-      <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Research Highlight</h2>
+      <p class="section-title">Research Highlight</p>
       <p><em>Deep Bayesian Analysis on Kidney Transplant</em></p>
     </div>
 
