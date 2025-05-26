@@ -1,7 +1,7 @@
 <template>
-  <Projects />
+  <router-view />
 </template>
 
 <script setup lang="ts">
-import Projects from './components/Projects.vue'
+import { RouterView } from 'vue-router'
 </script>

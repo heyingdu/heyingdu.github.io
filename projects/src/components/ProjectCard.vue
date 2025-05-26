@@ -1,5 +1,14 @@
 <template>
-  <div :class="['card', highlight ? 'card--highlight' : '']">
+ <router-link
+  :to="`/posts/${slug}`"
+  custom
+  v-slot="{ navigate }"
+>
+  <div
+    :class="['card', highlight ? 'card--highlight' : '']"
+    @click="navigate"
+    style="cursor: pointer"
+  >
     <img :src="imgSrc" :alt="alt" />
     <div class="card-content">
       <h3>{{ title }}</h3>
@@ -7,9 +16,11 @@
       <div class="meta">{{ year }} · {{ author }}</div>
     </div>
   </div>
+</router-link>
 </template>
 
 <script lang="ts" setup>
+
 defineProps<{
   title: string;
   description: string;
@@ -18,6 +29,7 @@ defineProps<{
   year: string;
   author: string;
   highlight?: boolean;
+  slug:string;
 }>();
 </script>
 
