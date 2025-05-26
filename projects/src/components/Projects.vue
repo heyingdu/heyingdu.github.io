@@ -14,33 +14,33 @@
       />
       <ProjectCard
         title="Targeted MLE"
-        description="Built with logistic regression and XGBoost to predict telecom customer churn using behavior data."
-        imgSrc="/images/causal.png"
+        description="Causal effects; Mediation Analysis"
+        imgSrc="/images/TMLE.png"
         alt="TMLE"
         year="2025"
         author="Heying Du"
       />
       <ProjectCard
-        title="Purchase Conversion Analytics"
-        description="Computed per-user conversion rate by analyzing product view vs. purchase patterns."
-        imgSrc="/project-images/conversion.png"
-        alt="Conversion Rate"
+        title="AI tool for data analysis"
+        description="Applied AI to analyze data and provide insights."
+        imgSrc="/images/ai.png"
+        alt="AI tool for data analysis"
         year="2025"
         author="Heying Du"
       />
       <ProjectCard
-        title="Text Classification with Transformers"
-        description="Used BERT to classify research paper abstracts in biomedical science fields."
-        imgSrc="/project-images/nlp.png"
-        alt="NLP Text Classification"
+        title="GMM for Mixture of Distributions"
+        description="Applied GMM to model the distribution of a mixture of distributions."
+        imgSrc="/images/gmm.png"
+        alt="GMM"
         year="2024"
         author="Heying Du"
       />
       <ProjectCard
-        title="Data Dashboard for UCLA"
-        description="A React + Django-based dashboard that visualizes public health data for institutional reporting."
-        imgSrc="/project-images/dashboard.png"
-        alt="Interactive Dashboard"
+        title="Data management system development"
+        description="Developed a React + Django-based dashboard for public health data visualization and institutional reporting."
+        imgSrc="/images/dashboard.png"
+        alt="Dashboard"
         year="2025"
         author="Heying Du"
       />

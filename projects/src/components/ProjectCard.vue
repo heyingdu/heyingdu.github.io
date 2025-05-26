@@ -27,6 +27,12 @@ defineProps<{
   font-size: 0.6rem;
   color: #999;
 }
+.card--highlight .meta {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: #999;
+  text-align: right;
+}
 .card {
   background-color: #fff;
   border-radius: 14px;
@@ -72,12 +78,6 @@ defineProps<{
   margin-top: 0;
   font-size: 0.9rem;
   color: #555;
-}
-
-.meta {
-  margin-top: auto;
-  font-size: 0.8rem;
-  color: #999;
 }
 
 .card--highlight {
