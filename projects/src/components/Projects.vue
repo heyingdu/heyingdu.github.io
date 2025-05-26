@@ -94,7 +94,7 @@ import ProjectCard from './ProjectCard.vue'
 
 @media (max-width: 768px) {
   .container {
-    width: 80vw;
+    width: 90vw;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, calc((80vw - 1rem) / 2));
