@@ -22,16 +22,6 @@ defineProps<{
 </script>
 
 <style scoped>
-/* 通用样式 */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 1.5rem;
-  box-sizing: border-box;
-}
-
 .card {
   background-color: #fff;
   border-radius: 14px;
@@ -41,7 +31,7 @@ defineProps<{
   display: flex;
   flex-direction: column;
   transition: transform 0.2s;
-  height: 330px; /* 默认固定高度 */
+  height: 330px;
   box-sizing: border-box;
 }
 
@@ -51,12 +41,9 @@ defineProps<{
 
 .card img {
   width: 100%;
-  height: 170px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .card-content {
@@ -87,7 +74,6 @@ defineProps<{
   color: #999;
 }
 
-/* 高亮卡片默认样式 */
 .card--highlight {
   grid-column: span 4;
   grid-row: span 2;
@@ -104,24 +90,16 @@ defineProps<{
   padding-top: 1.5rem;
 }
 
-/* ========== 大屏电脑端 (宽度 > 1024px) ========== */
-/* 使用默认样式即可 */
-
-/* ========== 大平板 (901px ~ 1024px) ========== */
 @media (max-width: 1024px) and (min-width: 901px) {
-  .container {
-    max-width: 95vw;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.2rem;
-    padding: 0 1rem;
-  }
-
   .card {
     height: 300px;
   }
 
   .card img {
-    height: 160px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
 
   .card h3 {
@@ -142,7 +120,7 @@ defineProps<{
   }
 
   .card--highlight img {
-    width: 50%;
+    width: 60%;
     height: 100%;
     object-fit: contain;
     display: block;
@@ -154,21 +132,16 @@ defineProps<{
   }
 }
 
-/* ========== 中平板 (769px ~ 900px) ========== */
 @media (max-width: 900px) and (min-width: 769px) {
-  .container {
-    max-width: 90vw;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-
   .card {
     height: 280px;
   }
 
   .card img {
-    height: 140px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
 
   .card h3 {
@@ -187,9 +160,10 @@ defineProps<{
   }
 
   .card--highlight img {
-    height: 140px;
-    width: 40%;
-    object-fit: cover;
+    width: 60%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
 
   .card--highlight .card-content {
@@ -198,23 +172,16 @@ defineProps<{
   }
 }
 
-/* ========== 手机 (≤ 768px) ========== */
 @media (max-width: 768px) {
-  .container {
-    width: 80vw;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, calc((80vw - 1rem) / 2));
-    gap: 1rem;
-    padding: 0;
-  }
-
   .card {
     height: 260px;
   }
 
   .card img {
-    height: 120px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
 
   .card h3 {
