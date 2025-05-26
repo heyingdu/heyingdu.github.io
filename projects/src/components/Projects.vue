@@ -97,7 +97,7 @@ import ProjectCard from './ProjectCard.vue'
     width: 90vw;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, calc((80vw - 1rem) / 2));
+    grid-template-columns: repeat(2, calc((90vw - 1rem) / 2));
     gap: 1rem;
     padding: 0;
   }
