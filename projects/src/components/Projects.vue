@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1 class="title">Projects</h1>
-    <p class="subtitle">XMU | UCLA</p>
+    <p class="subtitle">Shanghai, China</p>
     <div class="container">
       <ProjectCard
         highlight
