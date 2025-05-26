@@ -21,20 +21,20 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: ./projects/vite-app
+        working-directory: ./projects
         run: npm install
 
       - name: Build project
-        working-directory: ./projects/vite-app
+        working-directory: ./projects
         run: npm run build
 
       - name: Verify build output exists
-        run: ls -la ./projects/vite-app/dist
+        run: ls -la ./projects/dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./projects/vite-app/dist
+          publish_dir: ./projects/dist
           publish_branch: gh-pages
           clean: true
