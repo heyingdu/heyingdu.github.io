@@ -22,6 +22,11 @@ defineProps<{
 </script>
 
 <style scoped>
+.meta {
+  margin-top: auto;
+  font-size: 0.6rem;
+  color: #999;
+}
 .card {
   background-color: #fff;
   border-radius: 14px;
@@ -41,7 +46,7 @@ defineProps<{
 
 .card img {
   width: 100%;
-  height: 100%;
+  height: 50%;
   object-fit: contain;
   display: block;
 }
@@ -59,12 +64,13 @@ defineProps<{
   margin-top: 0;
   font-size: 1.1rem;
   color: #111;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0;
 }
 
 .card p {
+  max-height: 5.4em;
   margin-top: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #555;
 }
 
@@ -139,7 +145,7 @@ defineProps<{
 
   .card img {
     width: 100%;
-    height: 100%;
+    height: 50%;
     object-fit: contain;
     display: block;
   }
@@ -179,7 +185,7 @@ defineProps<{
 
   .card img {
     width: 100%;
-    height: 100%;
+    height: 50%;
     object-fit: contain;
     display: block;
   }
@@ -203,7 +209,7 @@ defineProps<{
 
   .card--highlight img {
     width: 100%;
-    height: 100%;
+    height: 50%;
     object-fit: contain;
     display: block;
   }
