@@ -11,33 +11,33 @@ import { ref, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { storage } from '../firebase'
 import { ref as storageRef, uploadBytes, getBlob, getDownloadURL } from 'firebase/storage'
-import { auth, githubProvider } from '../firebase'
-import { signInWithPopup } from 'firebase/auth'
+// import { auth, githubProvider } from '../firebase'
+// import { signInWithPopup } from 'firebase/auth'
 
-const allowedEmail = 'study@heyingdu.com'
+// const allowedEmail = 'study@heyingdu.com'
 
-onMounted(async () => {
-  if (!auth.currentUser) {
-    try {
-      const result = await signInWithPopup(auth, githubProvider)
-      const user = result.user
+// onMounted(async () => {
+//   if (!auth.currentUser) {
+//     try {
+//       const result = await signInWithPopup(auth, githubProvider)
+//       const user = result.user
 
-      if (user.email !== allowedEmail) {
-        alert('Not Allowed')
-        window.location.href = '/'
-      }
-    } catch (err) {
-      alert('Failed Login')
-      window.location.href = '/'
-    }
-  } else {
-    const user = auth.currentUser
-    if (user?.email !== allowedEmail) {
-      alert('Not Allowed')
-      window.location.href = '/'
-    }
-  }
-})
+//       if (user.email !== allowedEmail) {
+//         alert('Not Allowed')
+//         window.location.href = '/'
+//       }
+//     } catch (err) {
+//       alert('Failed Login')
+//       window.location.href = '/'
+//     }
+//   } else {
+//     const user = auth.currentUser
+//     if (user?.email !== allowedEmail) {
+//       alert('Not Allowed')
+//       window.location.href = '/'
+//     }
+//   }
+// })
 const route = useRoute()
 const id = route.params.id as string
 const markdown = ref('')

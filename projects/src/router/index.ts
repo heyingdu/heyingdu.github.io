@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Projects from '../views/Projects.vue'
-import Writer from '../views/writer.vue'
+import Writer from '../views/Writer.vue'
 import Post from '../views/Post.vue';
 const routes = [
     { path: '/', name: 'Home', component: Projects },

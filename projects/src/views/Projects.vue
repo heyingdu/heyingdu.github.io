@@ -5,7 +5,7 @@
       <h1 class="title">Projects</h1>
       <p class="subtitle">Shanghai, China</p>
     </div>
-    <button class="github-btn" @click="loginAndGo" aria-label="Login with GitHub">
+    <button class="github-btn" @click="toGithub" aria-label="Login with GitHub">
       <svg
         height="24"
         width="24"
@@ -78,6 +78,9 @@ import { signInWithPopup } from 'firebase/auth'
 
 const router = useRouter()
 
+const toGithub = async () => {
+  window.location.href = 'https://github.com/heyingdu'
+}
 const loginAndGo = async () => {
   try {
     const result = await signInWithPopup(auth, githubProvider)
@@ -96,6 +99,7 @@ const loginAndGo = async () => {
   height: 4rem;
   display: flex;
   align-items: center;
+  padding: 1.5rem;
 }
 
 .text-group {
