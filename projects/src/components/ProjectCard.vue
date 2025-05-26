@@ -180,7 +180,7 @@ defineProps<{
 
 @media (max-width: 768px) {
   .card {
-    height: 260px;
+    height: 270px;
   }
 
   .card img {

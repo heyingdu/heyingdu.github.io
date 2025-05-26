@@ -94,12 +94,13 @@ import ProjectCard from './ProjectCard.vue'
 
 @media (max-width: 768px) {
   .container {
-    width: 90vw;
-    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 1rem;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 }
 </style>
