@@ -15,14 +15,14 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
       - name: Install dependencies
         working-directory: ./projects
-        run: npm install
+        run: npm ci
 
       - name: Build project
         working-directory: ./projects
@@ -38,3 +38,4 @@ jobs:
           publish_dir: ./projects/dist
           publish_branch: gh-pages
           clean: true
+          allow_empty_commit: true
