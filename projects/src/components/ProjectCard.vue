@@ -139,6 +139,7 @@ defineProps<{
 
   .card--highlight img {
     width: 60%;
+    max-width: 60%;
     height: 100%;
     object-fit: contain;
     display: block;
