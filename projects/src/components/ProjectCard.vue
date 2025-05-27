@@ -110,7 +110,7 @@ defineProps<{
 
 @media (max-width: 1024px) and (min-width: 901px) {
   .card {
-    height: auto;
+    height: 300px;
   }
 
   .card img {
@@ -131,7 +131,7 @@ defineProps<{
   .card--highlight {
     grid-column: span 4;
     grid-row: span 2;
-    height: auto;
+    height: 300px;
     width: 100%;
     margin: 0;
     box-sizing: border-box;
@@ -152,7 +152,7 @@ defineProps<{
 
 @media (max-width: 900px) and (min-width: 769px) {
   .card {
-    height: auto;
+    height: 280px;
   }
 
   .card img {
@@ -174,6 +174,7 @@ defineProps<{
     grid-column: span 3;
     grid-row: span 1;
     height: auto;
+    min-height: 280px;
   }
 
   .card--highlight img {
@@ -186,12 +187,13 @@ defineProps<{
   .card--highlight .card-content {
     flex: 1;
     padding-left: 1rem;
+    width: 40%;
   }
 }
 
 @media (max-width: 768px) {
   .card {
-    height: auto;
+    height: 270px;
   }
 
   .card img {
@@ -215,7 +217,7 @@ defineProps<{
     width: 100% !important;
     margin: 0 !important;
     box-sizing: border-box;
-    height: auto;
+    height: 330px;
   }
 
   .card--highlight img {
