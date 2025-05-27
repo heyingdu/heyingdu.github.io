@@ -172,26 +172,27 @@ defineProps<{
   }
 
   .card--highlight {
-    max-width: 100%;
-    grid-column: span 3;
-    grid-row: span 1;
-    height: auto;
-    min-height: 280px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 
-  .card--highlight img {
-    max-width: 60%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    box-sizing: border-box;
-  }
+.card--highlight img {
+  flex: 1 1 60%;
+  max-width: 60%;
+  height: auto;
+  object-fit: contain;
+  box-sizing: border-box;
+}
 
-  .card--highlight .card-content {
-    flex: 1;
-    padding-left: 1rem;
-    width: 40%;
-  }
+.card--highlight .card-content {
+  flex: 1 1 40%;
+  max-width: 40%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
 }
 
 @media (max-width: 768px) {
