@@ -97,15 +97,29 @@ defineProps<{
   grid-row: span 2;
   display: flex;
   flex-direction: row;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .card--highlight img {
+  width: 100%;
+  max-width: 60%;
   height: auto;
   object-fit: contain;
+  display: block;
+  flex-shrink: 1;
 }
 
 .card--highlight .card-content {
-  padding-top: 1.5rem;
+  flex: 1;
+  min-width: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 @media (max-width: 1024px) and (min-width: 901px) {
@@ -129,26 +143,34 @@ defineProps<{
   }
 
   .card--highlight {
-    grid-column: span 4;
-    grid-row: span 2;
-    height: 300px;
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-  }
+  grid-column: span 4;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
 
-  .card--highlight img {
-    width: 60%;
-    max-width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
+.card--highlight img {
+  width: 100%;
+  max-width: 60%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 1;
+}
 
-  .card--highlight .card-content {
-    padding: 1rem;
-    flex: 1;
-  }
+.card--highlight .card-content {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 }
 
 @media (max-width: 900px) and (min-width: 769px) {
