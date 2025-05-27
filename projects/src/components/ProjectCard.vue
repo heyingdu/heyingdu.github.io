@@ -246,6 +246,7 @@ defineProps<{
   .card--highlight img {
     width: 100%;
     height: 50%;
+    max-width: 100%;
     object-fit: contain;
     display: block;
   }
