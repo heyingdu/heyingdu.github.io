@@ -171,6 +171,7 @@ defineProps<{
   }
 
   .card--highlight {
+    max-width: 100%;
     grid-column: span 3;
     grid-row: span 1;
     height: auto;
