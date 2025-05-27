@@ -157,9 +157,10 @@ defineProps<{
 
   .card img {
     width: 100%;
-    height: 50%;
+    max-height: 50%;
     object-fit: contain;
     display: block;
+    box-sizing: border-box;
   }
 
   .card h3 {
@@ -179,10 +180,11 @@ defineProps<{
   }
 
   .card--highlight img {
-    width: 60%;
+    max-width: 60%;
     height: 100%;
     object-fit: contain;
     display: block;
+    box-sizing: border-box;
   }
 
   .card--highlight .card-content {
