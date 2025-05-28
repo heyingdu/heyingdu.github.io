@@ -11,40 +11,50 @@ import { ref, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { storage } from '../firebase'
 import { ref as storageRef, uploadBytes, getBlob, getDownloadURL } from 'firebase/storage'
-// import { auth, githubProvider } from '../firebase'
-// import { signInWithPopup } from 'firebase/auth'
 
-// const allowedEmail = 'study@heyingdu.com'
-
-// onMounted(async () => {
-//   if (!auth.currentUser) {
-//     try {
-//       const result = await signInWithPopup(auth, githubProvider)
-//       const user = result.user
-
-//       if (user.email !== allowedEmail) {
-//         alert('Not Allowed')
-//         window.location.href = '/'
-//       }
-//     } catch (err) {
-//       alert('Failed Login')
-//       window.location.href = '/'
-//     }
-//   } else {
-//     const user = auth.currentUser
-//     if (user?.email !== allowedEmail) {
-//       alert('Not Allowed')
-//       window.location.href = '/'
-//     }
-//   }
-// })
 const route = useRoute()
 const id = route.params.id as string
 const markdown = ref('')
 const editorRef = ref<HTMLTextAreaElement | null>(null)
-
 const fileRef = storageRef(storage, `posts/${id}.md`)
 
+const lastSavedText = ref('') // 用于判断内容是否有真实变化
+
+const debounce = (fn: (...args: any[]) => void, delay: number) => {
+  let timeout: ReturnType<typeof setTimeout> | null = null
+  return (...args: any[]) => {
+    if (timeout) clearTimeout(timeout)
+    timeout = setTimeout(() => fn(...args), delay)
+  }
+}
+
+// 页面加载时：读取 Markdown 内容，不触发上传
+onMounted(async () => {
+  try {
+    const blob = await getBlob(fileRef)
+    const text = await blob.text()
+    markdown.value = text
+    lastSavedText.value = text // 设置初始已保存内容
+  } catch {
+    markdown.value = ''
+    lastSavedText.value = ''
+  }
+})
+
+// 只有用户修改了内容才上传（内容不同才触发）
+const debouncedUpload = debounce(async (val: string) => {
+  if (val !== lastSavedText.value) {
+    const fileBlob = new Blob([val], { type: 'text/plain' })
+    await uploadBytes(fileRef, fileBlob)
+    lastSavedText.value = val
+  }
+}, 1000)
+
+watch(markdown, (val) => {
+  debouncedUpload(val)
+})
+
+// 阻止 Ctrl+S 保存行为
 onMounted(() => {
   const blockSaveShortcut = (e: KeyboardEvent) => {
     if ((e.metaKey || e.ctrlKey) && e.key === 's') {
@@ -52,28 +62,13 @@ onMounted(() => {
       e.stopPropagation()
     }
   }
-
   window.addEventListener('keydown', blockSaveShortcut)
   onUnmounted(() => {
     window.removeEventListener('keydown', blockSaveShortcut)
   })
 })
 
-onMounted(async () => {
-  try {
-    const blob = await getBlob(fileRef)
-    const text = await blob.text()
-    markdown.value = text
-  } catch {
-    markdown.value = ''
-  }
-})
-
-watch(markdown, async (val) => {
-  const fileBlob = new Blob([val], { type: 'text/plain' })
-  await uploadBytes(fileRef, fileBlob)
-})
-
+// 粘贴图片上传并插入 markdown 链接
 onMounted(() => {
   const onPaste = async (e: ClipboardEvent) => {
     if (!e.clipboardData) return
