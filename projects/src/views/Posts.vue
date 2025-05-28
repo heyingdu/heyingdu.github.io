@@ -6,11 +6,33 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { marked } from 'marked'
+import katex from 'katex'
+import 'katex/dist/katex.min.css'
 import { getDownloadURL, ref as storageRef } from 'firebase/storage'
 import { storage } from '../firebase'
 
 const html = ref('')
 const route = useRoute()
+
+function renderMathInMarkdown(text: string): string {
+  text = text.replace(/\$\$([\s\S]+?)\$\$/g, (_, math) => {
+    try {
+      return katex.renderToString(math, { displayMode: true })
+    } catch {
+      return `<pre class="math-error">$$${math}$$</pre>`
+    }
+  })
+
+  text = text.replace(/\$([^\$]+?)\$/g, (_, math) => {
+    try {
+      return katex.renderToString(math, { displayMode: false })
+    } catch {
+      return `<code class="math-error">$${math}$</code>`
+    }
+  })
+
+  return text
+}
 
 onMounted(async () => {
   const id = route.params.id
@@ -18,15 +40,19 @@ onMounted(async () => {
     const fileRef = storageRef(storage, `posts/${id}.md`)
     const url = await getDownloadURL(fileRef)
     const res = await fetch(url)
-    const text = await res.text()
-    html.value = await marked(text)
+    let text = await res.text()
+
+    text = renderMathInMarkdown(text)
+    html.value =await marked(text)
   } catch (e) {
-    html.value = '<p>❌</p>'
+    html.value = '<p>Load error</p>'
   }
 })
 </script>
 
 <style scoped>
+@import 'katex/dist/katex.min.css';
+
 .markdown-body {
   max-width: 800px;
   margin: 2rem auto;
@@ -127,5 +153,11 @@ onMounted(async () => {
   border-radius: 4px;
   font-family: 'Courier New', monospace;
   font-size: 0.95rem;
+}
+
+.math-error {
+  color: red;
+  font-family: monospace;
+  white-space: pre-wrap;
 }
 </style>
