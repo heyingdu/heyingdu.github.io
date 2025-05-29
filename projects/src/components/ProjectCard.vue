@@ -216,51 +216,96 @@ defineProps<{
 
 @media (max-width: 768px) {
   .card {
-    height: 270px;
+    height: 300px !important;
+    padding: 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .card img {
-    width: 100%;
-    height: 50%;
-    object-fit: contain;
-    display: block;
+    width: 100% !important;
+    height: 120px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .card-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
   }
 
   .card h3 {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
+    margin: 0 0 0.5rem 0 !important;
   }
 
   .card p {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
+    flex: 1 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
   }
 
+  .card .meta {
+    margin-top: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* highlight 卡片 */
   .card--highlight {
-    display: flex;
-    grid-column: span 2;
-    flex-direction: column;
+    display: flex !important;
+    grid-column: span 2 !important;
+    flex-direction: column !important;
     width: 100% !important;
     margin: 0 !important;
-    box-sizing: border-box;
-    height: 330px;
-    flex-wrap: nowrap;
+    box-sizing: border-box !important;
+    height: 350px !important;
+    padding: 1rem !important;
   }
 
   .card--highlight img {
-    width: 100%;
-    height: 50%;
-    max-width: 100%;
-    object-fit: contain;
-    display: block;
-    flex-shrink: 0;
+    width: 100% !important;
+    height: 150px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+    background-color: #f8f9fa !important;
   }
 
   .card--highlight .card-content {
-    flex: 1;
-    min-width: 0;
-    padding: 1rem;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-    word-break: break-word;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+  }
+
+  .card--highlight h3 {
+    font-size: 1rem !important;
+    margin: 0 0 0.5rem 0 !important;
+  }
+
+  .card--highlight p {
+    font-size: 0.85rem !important;
+    flex: 1 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 4 !important;
+    -webkit-box-orient: vertical !important;
+  }
+
+  .card--highlight .meta {
+    margin-top: auto !important;
+    flex-shrink: 0 !important;
+    font-size: 0.8rem !important;
+    text-align: left !important;
   }
 }
 </style>
