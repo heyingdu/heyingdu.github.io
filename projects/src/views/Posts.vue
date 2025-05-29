@@ -321,7 +321,7 @@ center {
   
   .markdown-body p {
     font-size: 11pt;
-    text-indent: 1.5em;
+    /* text-indent: 1.5em; */
     line-height: 1.7;
   }
   
@@ -389,7 +389,7 @@ center {
   
   .markdown-body p {
     font-size: 10pt;
-    text-indent: 1em;
+    /* text-indent: 1em; */
   }
   
   center {

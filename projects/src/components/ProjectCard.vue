@@ -33,7 +33,7 @@ defineProps<{
 }>();
 </script>
 
-<style>
+<style scoped>
 .meta {
   margin-top: auto;
   font-size: 0.6rem;
@@ -155,7 +155,7 @@ defineProps<{
 }
 
 .card--highlight img {
-  width: 100%;
+  width: 60%;
   max-width: 60%;
   height: auto;
   object-fit: contain;
@@ -235,29 +235,32 @@ defineProps<{
   }
 
   .card--highlight {
-    display: flex !important;
-    flex-direction: column !important;
+    display: flex;
+    grid-column: span 2;
+    flex-direction: column;
     width: 100% !important;
     margin: 0 !important;
     box-sizing: border-box;
-    height: auto !important;
+    height: 330px;
+    flex-wrap: nowrap;
   }
 
   .card--highlight img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
+    width: 100%;
+    height: 50%;
+    max-width: 100%;
+    object-fit: contain;
     display: block;
+    flex-shrink: 0;
   }
 
   .card--highlight .card-content {
-    display: block !important;
-    width: 100% !important;
-    white-space: normal !important;
-    padding: 1rem !important;
+    flex: 1;
+    min-width: 0;
+    padding: 1rem;
     box-sizing: border-box;
-    
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
 </style>
