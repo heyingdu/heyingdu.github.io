@@ -33,7 +33,7 @@ defineProps<{
 }>();
 </script>
 
-<style scoped>
+<style>
 .meta {
   margin-top: auto;
   font-size: 0.6rem;
