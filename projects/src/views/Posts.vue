@@ -48,25 +48,30 @@ function updateProgress() {
 
 onMounted(async () => {
   const id = route.params.id
-  try {
-    const fileRef = storageRef(storage, `posts/${id}.md`)
-    const url = await getDownloadURL(fileRef)
-    const res = await fetch(url)
-    let text = await res.text()
+  const workerBaseUrl = 'https://firebase.heyingdu.com'
+  const url = `${workerBaseUrl}/posts/${id}.md`
 
+  try {
+    let res = await fetch(url)
+
+    if (!res.ok) {
+      const fileRef = storageRef(storage, `posts/${id}.md`)
+      const firebaseUrl = await getDownloadURL(fileRef)
+      res = await fetch(firebaseUrl)
+    }
+
+    let text = await res.text()
     text = renderMathInMarkdown(text)
     html.value = await marked(text)
   } catch (e) {
     html.value = '<p>Load error</p>'
   }
-  
-  // 添加滚动事件监听器
+
   window.addEventListener('scroll', updateProgress)
   window.addEventListener('resize', updateProgress)
 })
 
 onUnmounted(() => {
-  // 清理事件监听器
   window.removeEventListener('scroll', updateProgress)
   window.removeEventListener('resize', updateProgress)
 })
