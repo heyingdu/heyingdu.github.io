@@ -166,7 +166,7 @@ const loginAndGo = async () => {
   .container {
     max-width: 100%;
     padding: 0 1rem;
-    display: flex;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     box-sizing: border-box;

@@ -235,21 +235,28 @@ defineProps<{
   }
 
   .card--highlight {
-  display: flex;
-    grid-column: 1 / -1;
+    display: flex;
     flex-direction: column;
     width: 100% !important;
     margin: 0 !important;
+    height: auto;
     box-sizing: border-box;
-    height: 330px;
   }
 
   .card--highlight img {
-    width: 100%;
-    height: 50%;
-    max-width: 100%;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
     object-fit: contain;
     display: block;
+    flex: none !important;
+  }
+
+  .card--highlight .card-content {
+    flex: none !important;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 }
 </style>
