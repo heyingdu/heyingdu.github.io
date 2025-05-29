@@ -210,7 +210,6 @@ center {
   line-height: 1.4;
 }
 
-/* 引用块样式 */
 .markdown-body blockquote {
   border-left: 3px solid #666;
   padding: 1rem 1.5rem;
@@ -222,7 +221,6 @@ center {
   line-height: 1.6;
 }
 
-/* 代码块样式 */
 .markdown-body pre {
   background: #f8f8f8;
   border: 1px solid #ddd;

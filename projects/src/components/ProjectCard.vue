@@ -235,6 +235,7 @@ defineProps<{
   }
 
   .card--highlight {
+  display: flex;
     grid-column: 1 / -1;
     flex-direction: column;
     width: 100% !important;
