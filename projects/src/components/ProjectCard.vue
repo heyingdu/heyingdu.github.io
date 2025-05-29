@@ -235,27 +235,27 @@ defineProps<{
   }
 
   .card--highlight {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
     width: 100% !important;
     margin: 0 !important;
-    height: auto;
     box-sizing: border-box;
+    height: auto !important;
   }
 
   .card--highlight img {
     width: 100% !important;
     height: auto !important;
     max-width: 100% !important;
-    object-fit: contain;
+    object-fit: contain !important;
     display: block;
-    flex: none !important;
   }
 
   .card--highlight .card-content {
-    flex: none !important;
-    width: 100%;
-    padding: 1rem;
+    display: block !important;
+    width: 100% !important;
+    white-space: normal !important;
+    padding: 1rem !important;
     box-sizing: border-box;
   }
 }
