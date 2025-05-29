@@ -275,7 +275,6 @@ defineProps<{
     object-fit: contain !important;
     display: block !important;
     margin-bottom: 0.5rem !important;
-    background-color: #f8f9fa !important;
   }
 
   .card--highlight .card-content {
