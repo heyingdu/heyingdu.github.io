@@ -1,4 +1,4 @@
-name: Build and Deploy to gh-pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -8,10 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: projects
 
     steps:
       - name: Checkout code
@@ -24,12 +20,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: projects
 
       - name: Build project
         run: npm run build
+        working-directory: projects
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          publish_dir: projects/dist
