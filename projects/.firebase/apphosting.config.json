@@ -1,0 +1,9 @@
+{
+  "run": {
+    "command": "npm run build",
+    "workingDirectory": "projects"
+  },
+  "serve": {
+    "command": "npx serve -s dist"
+  }
+}
