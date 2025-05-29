@@ -257,6 +257,7 @@ defineProps<{
     white-space: normal !important;
     padding: 1rem !important;
     box-sizing: border-box;
+    
   }
 }
 </style>
